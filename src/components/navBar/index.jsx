@@ -1,13 +1,11 @@
-import React from "react";
-import Buttons from '../../atoms/button/index'
-import './navbar.css';
+import React from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
-
+import Buttons from '../button/index'
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -23,6 +21,7 @@ const Search = styled('div')(({ theme }) => ({
       width: 'auto',
     },
   }));
+
   
   const StyledInputBase = styled(InputBase)(({ theme }) => ({
     color: 'inherit',
@@ -40,19 +39,13 @@ const Search = styled('div')(({ theme }) => ({
       },
     },
   }));
+  
 
 const Navbar = () => {
     return (
-        <div>
-             {/* <Box sx={{ width: '100%', bgcolor: '#383838', padding: '1px' }}>
-                <Tabs>
-                    <Tab label="Item One" />
-                    <Tab label="Item Two" />
-                    <Tab label="Item Three" />
-                </Tabs>
-            </Box> */}
-            <Box sx={{ flexGrow: 1 , backgroundColor: '' }}>
-                <AppBar position="static">
+        <section className="navbar">
+            <Box sx={{ flexGrow: 1,}} >
+                <AppBar position="static" style={{ flexGrow: 1, background: 'transparent', boxShadow: 'none'}}>
                     <Toolbar>
                     <Typography
                         variant="h6"
@@ -60,20 +53,20 @@ const Navbar = () => {
                         component="div"
                         sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
                     >
-                        NewNews
+                        New-News
                     </Typography>
 
                     <Search>
                         <StyledInputBase
-                            placeholder="Search…"
-                            inputProps={{ 'aria-label': 'search' }}
+                        placeholder="Search…"
+                        inputProps={{ 'aria-label': 'search' }}
                         />
                     </Search>
-                    <Buttons style={{ padding: '2px'}} text='cari'/>
+                    {/* <Buttons text='Cari'/> */}
                     </Toolbar>
                 </AppBar>
             </Box>
-        </div>
+        </section>
     )
 }
 

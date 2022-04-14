@@ -6,7 +6,7 @@ const Buttons = (props) => {
     console.log(props)
     return (
         <div>
-            <Button id='button-search' variant="contained">{props.text}</Button>
+            <Button style={{ backgroundColor: '#041C32'}} id='button-search' variant="contained">{props.text}</Button>
         </div>
     )
 
