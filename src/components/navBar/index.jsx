@@ -62,7 +62,7 @@ const Navbar = () => {
                         inputProps={{ 'aria-label': 'search' }}
                         />
                     </Search>
-                    {/* <Buttons text='Cari'/> */}
+                    <Buttons className="button" text='Cari'/>
                     </Toolbar>
                 </AppBar>
             </Box>

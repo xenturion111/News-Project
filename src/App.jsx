@@ -7,10 +7,10 @@ function App() {
     <div className="App">
       <section className="Header">
         <Navbar />
-          <div class="Iam">
+          <div className="Iam">
             <p>New-News</p>
             <b>
-              <div class="innerIam">
+              <div className="innerIam">
                 Tempat<br /> 
                 Berita terkini<br />
                 Berita terpercaya<br />
@@ -20,6 +20,7 @@ function App() {
             </b>
           </div>
       </section>
+
       <section>
         
       </section>
