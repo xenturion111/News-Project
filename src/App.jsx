@@ -1,6 +1,9 @@
 import React from 'react'
 import './App.css'
 import Navbar from './components/navBar/index'
+import axios from 'axios'
+import {NewsContextProvider} from "./NewsContext"
+import News from "./components/News/News"
 
 function App() {
   return (
@@ -20,9 +23,10 @@ function App() {
             </b>
           </div>
       </section>
-
       <section>
-        
+        <NewsContextProvider>
+            <News />
+        </NewsContextProvider>
       </section>
     </div>
   )

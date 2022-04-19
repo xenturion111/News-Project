@@ -14,9 +14,10 @@ body {
 }
 
 .Iam {
-  padding: 4em 9.2em;
+  padding: 4em 8em;
   font: normal 40px/50px Montserrat, sans-serif;
   color: rgb(255, 255, 255);
+  text-align: center;
 }
 .Iam p {
   height: 50px;
