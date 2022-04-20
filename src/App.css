@@ -146,6 +146,16 @@ body {
 }
 
 .newsImage {
-  width: 200px;
+  align-items: center;
+  width: 320px;
   height: 200px;
+}
+
+.button {
+  padding: 3px;
+  display: flex;
+}
+
+.button, #btn-read, #btn-save {
+  flex-grow: 1;
 }

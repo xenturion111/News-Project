@@ -1,4 +1,5 @@
 import React from "react";
+import Buttons from "../button/index";
 
 function NewsArticle({ data }) {
   return (
@@ -9,6 +10,10 @@ function NewsArticle({ data }) {
       <span className="newsAuthor">{data.author}</span> <br />
       <span className="newsPublished">{data.publishedAt}</span>
       <span className="newsSource">{data.source.name}</span>
+        <div className="button">
+          <Buttons id="btn-read" text='READ'/>
+          <Buttons id="btn-save" text='SAVE' />
+        </div>
     </div>
   );
 }
