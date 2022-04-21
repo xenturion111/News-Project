@@ -4,6 +4,7 @@ import Navbar from './components/navBar/index'
 import axios from 'axios'
 import {NewsContextProvider} from "./NewsContext"
 import News from "./components/News/News"
+import Programming from "./page/Programming/index"
 
 function App() {
   return (

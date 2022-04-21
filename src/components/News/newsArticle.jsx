@@ -2,6 +2,7 @@ import React from "react";
 import Buttons from "../button/index";
 
 function NewsArticle({ data }) {
+
   return (
     <div className="news">
       <h1 className="newsTitle">{data.title}</h1>
