@@ -1,7 +1,7 @@
 import React from "react";
 import Buttons from "../button/index";
 
-function NewsArticle({ data }) {
+function NewsArticleProg({ data }) {
   
   const openRead = (url) => {
     const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
@@ -26,4 +26,4 @@ function NewsArticle({ data }) {
   );
 }
 
-export default NewsArticle;
+export default NewsArticleProg;

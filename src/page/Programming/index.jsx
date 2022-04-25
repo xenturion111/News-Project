@@ -1,6 +1,6 @@
 import React from 'react'
-import {NewsContextProvider} from "../../config/NewsContext"
-import News from "../../components/News/News"
+import {ProgrammingContextProvider} from "../../config/ProgrammingContext"
+import News from "../../components/newsTech/NewsProg"
 import Navbar from "../../components/navBar/index"
 import './index.css'
 
@@ -11,9 +11,9 @@ const Programming = () => {
         <Navbar />
       </div>
       <section className="Content">
-        <NewsContextProvider>
+        <ProgrammingContextProvider>
           <News />
-        </NewsContextProvider>
+        </ProgrammingContextProvider>
       </section>
          
     </div>

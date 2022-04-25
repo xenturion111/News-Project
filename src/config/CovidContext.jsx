@@ -1,9 +1,9 @@
 import React, { createContext, useEffect, useState } from "react";
 import axios from "axios";
 
-export const NewsContext = createContext();
+export const CovidContext = createContext();
 
-export const NewsContextProvider = (props) => {
+export const CovidContextProvider = (props) => {
   const [data, setData] = useState();
   const apiKey = "7ac509953f2b474181234c50d273d957";
 
@@ -14,16 +14,16 @@ export const NewsContextProvider = (props) => {
   useEffect(() => {
     axios
       .get(
-        `https://newsapi.org/v2/top-headlines?country=id&apiKey=${apiKey}`
+        `https://newsapi.org/v2/top-headlines?country=id&category=health&apiKey=${apiKey}`
       )
       .then((response) => setData(response.data))
       .catch((error) => console.log(error));
   }, []);
 
   return (
-    <NewsContext.Provider value={{ data }}>
+    <CovidContext.Provider value={{ data }}>
       {props.children}
-    </NewsContext.Provider>
+    </CovidContext.Provider>
   );
 
 };
