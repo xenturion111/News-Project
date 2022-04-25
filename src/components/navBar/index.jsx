@@ -6,6 +6,8 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import Buttons from '../button/index'
+import Nav from './Nav/index';
+import './navBar.css'
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -39,23 +41,29 @@ const Search = styled('div')(({ theme }) => ({
       },
     },
   }));
-  
+
+  // const NavComp = styled('div')(() => ({
+  //   display: 'flex',
+  //   justifyContent: 'space-between',
+  //   alignItems: 'center',
+  // }));
 
 const Navbar = () => {
     return (
         <section className="navbar">
-            <Box sx={{ flexGrow: 1,}} >
+            <Box sx={{ flexGrow: 1}} >
                 <AppBar position="static" style={{ flexGrow: 1, background: 'transparent', boxShadow: 'none'}}>
                     <Toolbar>
                     <Typography
                         variant="h6"
                         noWrap
                         component="div"
-                        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+                        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }}}
                     >
-                        New-News
+                        <Nav />
                     </Typography>
-
+                    
+                    
                     <Search>
                         <StyledInputBase
                         placeholder="Search…"

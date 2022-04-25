@@ -1,33 +1,22 @@
 import React from 'react'
 import './App.css'
 import Navbar from './components/navBar/index'
-import axios from 'axios'
-import {NewsContextProvider} from "./NewsContext"
-import News from "./components/News/News"
+import Home from "./page/Home/index"
+import Programming from "./page/Programming/index"
+import {  Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <section className="Header">
-        <Navbar />
-          <div className="Iam">
-            <p>New-News</p>
-            <b>
-              <div className="innerIam">
-                Tempat<br /> 
-                Berita terkini<br />
-                Berita terpercaya<br />
-                Berita Terbaik<br />
-                Hanya di NEW NEWS
-                </div>
-            </b>
-          </div>
-      </section>
-      <section>
-        <NewsContextProvider>
-            <News />
-        </NewsContextProvider>
-      </section>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path="/Programming" element={<Programming />} />
+          </Routes>
+{/* 
+      <section className='main-Content'>
+        <Home />
+      </section> */}
+      
     </div>
   )
 }

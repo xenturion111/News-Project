@@ -1,0 +1,8 @@
+.Nav {
+    color: #fff;
+    text-decoration: none;
+}
+
+.Nav > .navLink {
+    margin-right: 10px;
+}
