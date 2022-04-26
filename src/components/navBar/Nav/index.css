@@ -1,8 +1,17 @@
-.Nav {
+.Nav > .navLink {
+    margin-right: 10px;
+}
+
+.navLink a {
     color: #fff;
     text-decoration: none;
 }
 
-.Nav > .navLink {
-    margin-right: 10px;
+
+.navLink a:hover{
+    color:#1268b9;
+}
+
+.navLink a::after{
+    opacity: 1;
 }

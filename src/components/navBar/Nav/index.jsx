@@ -6,10 +6,10 @@ function Nav() {
   return (
     <nav>
         <div className="Nav">
-            <Link  style={{ textDecoration: 'none', color: 'white' }} to='/' className='navLink'>New News</Link>
-            <Link  style={{ textDecoration: 'none', color: 'white'}} to='/Programming' className='navLink'>Programming</Link>
-            <Link  style={{ textDecoration: 'none', color: 'white'}} to='/Covid' className='navLink'>Covid</Link>
-            <Link  style={{ textDecoration: 'none', color: 'white'}} to='/Saved' className='navLink'>Saved</Link>
+            <Link  style={{ textDecoration: 'none', color: 'white' }} to='/' className='navLink'><a>New News</a></Link>
+            <Link  style={{ textDecoration: 'none', color: 'white'}} to='/Programming' className='navLink'><a>Programming</a></Link>
+            <Link  style={{ textDecoration: 'none', color: 'white'}} to='/Covid' className='navLink'><a>Covid</a></Link>
+            <Link  style={{ textDecoration: 'none', color: 'white'}} to='/Saved' className='navLink'><a>Saved</a></Link>
         </div>
     </nav>
   )
