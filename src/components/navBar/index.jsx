@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -8,6 +8,7 @@ import InputBase from '@mui/material/InputBase';
 import Buttons from '../button/index'
 import Nav from './Nav/index';
 import './navBar.css'
+import { NewsContext }   from "../../config/NewsContext";
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -48,7 +49,18 @@ const Search = styled('div')(({ theme }) => ({
   //   alignItems: 'center',
   // }));
 
+
+
 const Navbar = () => {
+  // const [searchInput, setSearchInput] = useState('');
+  // const { data } = useContext(NewsContext);
+
+  // const SearchItems = (searchValue) => {
+  //   setSearchInput(searchValue);
+  //     data.filter((item) => {
+  //       return Object.values(item).join('').toLowerCase().includes(searchInput.toLowerCase());
+  //     })
+  // }
     return (
         <section className="navbar">
             <Box sx={{ flexGrow: 1}} >
@@ -68,6 +80,7 @@ const Navbar = () => {
                         <StyledInputBase
                         placeholder="Search…"
                         inputProps={{ 'aria-label': 'search' }}
+                        onChange={(e) => SearchItems(e.target.value)}
                         />
                     </Search>
                       <Buttons id="btn-search" text='Cari'/>

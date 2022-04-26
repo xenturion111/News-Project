@@ -14,7 +14,7 @@ export const ProgrammingContextProvider = (props) => {
   useEffect(() => {
     axios
       .get(
-        `https://newsapi.org/v2/everything?q=Apple&from=2022-04-25&sortBy=popularity&apiKey=${apiKey}`
+        `https://newsapi.org/v2/everything?q=coding&from=2022-04-25&sortBy=popularity&apiKey=${apiKey}`
       )
       .then((response) => setData(response.data))
       .catch((error) => console.log(error));
