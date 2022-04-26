@@ -3,10 +3,6 @@ import Buttons from "../button/index";
 
 function NewsArticleProg({ data }) {
   
-  const openRead = (url) => {
-    const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
-    if(newWindow) newWindow.opener = null;
-  }
 
   return (
     <div className="news">

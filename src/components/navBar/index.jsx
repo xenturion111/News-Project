@@ -8,7 +8,7 @@ import InputBase from '@mui/material/InputBase';
 import Buttons from '../button/index'
 import Nav from './Nav/index';
 import './navBar.css'
-import { NewsContext }   from "../../config/NewsContext";
+
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -80,7 +80,7 @@ const Navbar = () => {
                         <StyledInputBase
                         placeholder="Search…"
                         inputProps={{ 'aria-label': 'search' }}
-                        onChange={(e) => SearchItems(e.target.value)}
+                        // onChange={(e) => SearchItems(e.target.value)}
                         />
                     </Search>
                       <Buttons id="btn-search" text='Cari'/>

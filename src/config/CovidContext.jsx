@@ -14,7 +14,7 @@ export const CovidContextProvider = (props) => {
   useEffect(() => {
     axios
       .get(
-        `https://newsapi.org/v2/top-headlines?q=covid&apiKey=${apiKey}`
+        `https://newsapi.org/v2/top-headlines?q=covid&from=2022-04-01&to=2022-04-30&apiKey=${apiKey}`
       )
       .then((response) => setData(response.data))
       .catch((error) => console.log(error));
