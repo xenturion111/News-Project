@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from 'react'
+import './index.css'
 // import {ProgrammingContextProvider} from "../../config/ProgrammingContext"
 // import News from "../../components/newsTech/NewsProg"
 import Navbar from "../../components/navBar/index"
-import Buttons from "../../components/button/index"
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchNewsProg } from '../../store/actions'
-import './index.css'
+import Buttons from "../../components/button/index"
+
 
 const Programming = () => {
   const dispatch = useDispatch();
   const { newsProg, isLoading } = useSelector((state) => state);
 
   useEffect(() => {
-    dispatch((fetchNewsProg));
+    dispatch((fetchNewsProg()));
   }, []);
 
   return (
@@ -54,4 +55,4 @@ const Programming = () => {
   )
 }
 
-export default Programming
+export default Programming;

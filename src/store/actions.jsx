@@ -13,8 +13,12 @@ export const setDataProg = (payload) => ({
 export const setIsLoading = (payload) => ({
     type: "SET_ISLOADING",
     payload,
-})
+});
 
+// export const setDataCovid = (payload) => ({
+//     type: "SET_DATA_COVID",
+//     payload,
+// });
 
 export const fetchNews = () => async(dispatch) => {
     const apiKey = "08f4f778371a46f49202ea1f7bda2d74";
@@ -27,12 +31,11 @@ export const fetchNews = () => async(dispatch) => {
     catch (err) {
         console.error(err);
     }
- };
-
+}
  export const fetchNewsProg = () => async(dispatch) => {
     const apiKey = "08f4f778371a46f49202ea1f7bda2d74";
     try {
-        const res = await axios.get(`https://newsapi.org/v2/everything?q=coding&to=2022-04-26&sortBy=popularity&apiKey=${apiKey}`)
+        const res = await axios.get(`https://newsapi.org/v2/everything?q=coding&to=2022-04-27&sortBy=popularity&apiKey=${apiKey}`)
         await dispatch(setIsLoading(true));
         await dispatch(setDataProg(res.data.articles));
         await dispatch(setIsLoading(false));
@@ -40,6 +43,18 @@ export const fetchNews = () => async(dispatch) => {
     catch (err) {
         console.error(err);
     }
- };
+ }
 
+ export const fetchNewsCovid = () => async(dispatch) => {
+    const apiKey = "08f4f778371a46f49202ea1f7bda2d74";
+    try {
+        const res = await axios.get(`https://newsapi.org/v2/top-headlines?q=covid&to=2022-04-30&apiKey=${apiKey}`)
+        await dispatch(setIsLoading(true));
+        await dispatch(setData(res.data.articles));
+        await dispatch(setIsLoading(false));
+    } 
+    catch (err) {
+        console.error(err);
+    }
+ }
 

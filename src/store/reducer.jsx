@@ -1,6 +1,7 @@
 const initialState = {
     news: [],
     newsProg: [],
+    newsCovid: [],
     isLoading: false,
   };
   const reducers = (state = initialState, action) => {
@@ -9,6 +10,7 @@ const initialState = {
        return {
          ...state,
          news: action.payload,
+         newsCovid: action.payload,
        };
       case "SET_ISLOADING":
         return {
@@ -20,6 +22,11 @@ const initialState = {
           ...state,
           newsProg: action.payload,
         };
+      // case "SET_NEWS_COVID":
+      //   return {
+      //     ...state,
+      //     newsCovid: action.payload,
+      //   };
       default:
         return state;
     }
