@@ -10,7 +10,9 @@ import Buttons from "../../components/button/index"
 const Home = () => {
   const dispatch = useDispatch();
   const {news, isLoading} = useSelector((state) => state);
-
+  const onSave = () => {
+    dispatch(saveData());
+  }
   useEffect(() => {
     dispatch((fetchNews()));
   }, []);
@@ -51,7 +53,7 @@ const Home = () => {
                     <a href={data.url} target="_blank" style={{textDecoration: 'none'}}>
                       <Buttons id="btn-read" text='READ'/>
                     </a>
-                      <Buttons id="btn-save" text='SAVE' />
+                      <Buttons onClick={onSave} id="btn-save" text='SAVE' />
                     </div>
                 </div>
                 </>

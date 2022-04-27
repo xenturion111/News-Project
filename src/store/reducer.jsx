@@ -11,24 +11,21 @@ const initialState = {
          ...state,
          news: action.payload,
          newsCovid: action.payload,
+         newsProg: action.payload,
        };
       case "SET_ISLOADING":
         return {
           ...state,
           isLoading: action.payload,
         };
-      case "SET_NEWS_PROG": 
-        return {
-          ...state,
-          newsProg: action.payload,
-        };
-      // case "SET_NEWS_COVID":
+      // case "SET_NEWS_PROG": 
       //   return {
       //     ...state,
-      //     newsCovid: action.payload,
+      //     newsProg: action.payload,
       //   };
       default:
         return state;
     }
   };
+
   export default reducers;

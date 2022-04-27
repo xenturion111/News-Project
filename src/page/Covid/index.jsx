@@ -27,7 +27,7 @@ const Covid = () => {
             {newsCovid.map((data) => {
               return (
                 <>
-                  <div className="news" key={data.url}>
+                  <div className="news" key={data.title}>
                     <h1 className="newsTitle">{data.title}</h1>
                     <img className="newsImage" src={data.urlToImage} />
                     <p className="newsDesc">{data.description}</p>
