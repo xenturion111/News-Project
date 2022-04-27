@@ -1,3 +1,5 @@
+// import { SET_SAVED } from "./actions";
+
 const initialState = {
     news: [],
     newsProg: [],
@@ -18,14 +20,29 @@ const initialState = {
           ...state,
           isLoading: action.payload,
         };
-      // case "SET_NEWS_PROG": 
+        
+      // case SET_SAVED: {
       //   return {
-      //     ...state,
-      //     newsProg: action.payload,
-      //   };
+      //     ...state, 
+      //     news: action.payload,
+      //   }
+      // } 
       default:
         return state;
     }
   };
+
+// export const saveNews = () => async (dispatch, getState) => {
+//      const news = getState().news;
+//      await fetch('http://localhost:3000/Saved' ,{
+//         method: 'POST',
+//         headers: {
+//           'Accept': 'application/json',
+//           'Content-type': 'application/json'
+//         },
+//         body: JSON.stringify(news)
+//       }),
+//       alert('Success')
+//   }
 
   export default reducers;

@@ -10,6 +10,10 @@ export const setIsLoading = (payload) => ({
     payload,
 });
 
+export const saveData = (payload) => ({
+    type: "SET_SAVED",
+    payload,
+})
 export const fetchNews = () => async(dispatch) => {
     const apiKey = "08f4f778371a46f49202ea1f7bda2d74";
     try {
@@ -48,3 +52,4 @@ export const fetchNews = () => async(dispatch) => {
     }
  }
 
+ 
