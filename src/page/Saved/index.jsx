@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Saved = (props) => {
+const Saved = () => {
   return (
     <div>
-      <li>{props.saveData}</li>
+    
     </div>
   )
 }

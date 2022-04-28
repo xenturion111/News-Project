@@ -13,9 +13,14 @@ const Home = () => {
   const {news, isLoading} = useSelector((state) => state);
   const searchText = ''
 
+  const handleClick = (id) => {
+    dispatch(saveData(id));
+  }
+
   useEffect(() => {
     dispatch((fetchNews()));
   }, []);
+
   return (
     <div className="App">
       <section className="Header">
@@ -41,7 +46,7 @@ const Home = () => {
             {news.map((data) => {
               return (
                 <>
-                <div className="news" key={data.url}>
+                <div className="news" key={data.id}>
                   <h1 className="newsTitle">{data.title}</h1>
                   <img className="newsImage" src={data.urlToImage} />
                   <p className="newsDesc">{data.description}</p>
@@ -52,7 +57,7 @@ const Home = () => {
                     <a href={data.url} target="_blank" style={{textDecoration: 'none'}}>
                       <Buttons id="btn-read" text='READ'/>
                     </a>
-                      <Buttons onClick={() => onSave(`${data.url}`)} id="btn-save" text='SAVE' />
+                      <Buttons type="submit" onClick={() => handleClick(news.id)} id="btn-save" text='SAVE' />
                     </div>
                 </div>
                 </>
