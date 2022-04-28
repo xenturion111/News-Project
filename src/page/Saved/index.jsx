@@ -1,9 +1,11 @@
 import React from 'react'
 
-const Saved = () => {
+const Saved = (props) => {
   return (
-    <div>Saved</div>
+    <div>
+      <li>{props.saveData}</li>
+    </div>
   )
 }
 
-export default Saved
+export default Saved;

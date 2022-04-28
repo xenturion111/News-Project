@@ -1,3 +1,6 @@
+.headerSearch{
+  background-color:black;
+}
 form {
     display: grid;
     grid-template-columns: 1fr auto;

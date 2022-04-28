@@ -4,16 +4,14 @@ import './index.css'
 // import News from "../../components/News/News"
 import Navbar from "../../components/navBar/index"
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchNews } from '../../store/actions'
+import { fetchNews} from '../../store/actions'
 import Buttons from "../../components/button/index"
+
 
 const Home = () => {
   const dispatch = useDispatch();
   const {news, isLoading} = useSelector((state) => state);
-
-  const onSave = () => {
-    dispatch(saveData());
-  }
+  const searchText = ''
 
   useEffect(() => {
     dispatch((fetchNews()));
@@ -36,7 +34,6 @@ const Home = () => {
               </div>
       </section>
         <section>
-         
           {isLoading ? (
             <h1>LOADING...</h1>
           ): (
@@ -55,7 +52,7 @@ const Home = () => {
                     <a href={data.url} target="_blank" style={{textDecoration: 'none'}}>
                       <Buttons id="btn-read" text='READ'/>
                     </a>
-                      <Buttons onClick={onSave} id="btn-save" text='SAVE' />
+                      <Buttons onClick={() => onSave(`${data.url}`)} id="btn-save" text='SAVE' />
                     </div>
                 </div>
                 </>

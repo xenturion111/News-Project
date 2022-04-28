@@ -7,6 +7,9 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import Buttons from '../button/index'
 import Nav from './Nav/index';
+import {useDispatch} from "react-redux";
+import {fetchNewsSearch} from "../../store/actions";
+import {Link} from 'react-router-dom';
 import './navBar.css'
 
 
@@ -52,15 +55,15 @@ const Search = styled('div')(({ theme }) => ({
 
 
 const Navbar = () => {
-  // const [searchInput, setSearchInput] = useState('');
+  const [term, setTerm] = useState("");
+  const dispatch = useDispatch();
   // const { data } = useContext(NewsContext);
-
-  // const SearchItems = (searchValue) => {
-  //   setSearchInput(searchValue);
-  //     data.filter((item) => {
-  //       return Object.values(item).join('').toLowerCase().includes(searchInput.toLowerCase());
-  //     })
-  // }
+  const submitHandler = (e) => {
+    e.preventDefault();
+    // console.log(term);
+    dispatch(fetchNewsSearch(term));
+    setTerm("");
+  }
     return (
         <section className="navbar">
             <Box sx={{ flexGrow: 1}} >
@@ -75,15 +78,17 @@ const Navbar = () => {
                         <Nav />
                     </Typography>
                     
-                    
+                    <form onClick={submitHandler}>
                     <Search>
                         <StyledInputBase
-                        placeholder="Search…"
+                        placeholder="Search"
                         inputProps={{ 'aria-label': 'search' }}
-                        // onChange={(e) => SearchItems(e.target.value)}
+                        value = {term}
+                        onChange = {(e) => setTerm(e.target.value)}
                         />
                     </Search>
-                      <Buttons id="btn-search" text='Cari'/>
+                        <Buttons type="submit" text='Cari'/>
+                    </form>
                     </Toolbar>
                 </AppBar>
             </Box>
